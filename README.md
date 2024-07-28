@@ -7,3 +7,15 @@ An application that allows users to store their passwords securely. The app uses
 The main concept is allowing user to decide where they want to keep encrypted files and keys. They can be stored locally or in remote cloud storage e.g. Google drive. The synchronization feature will require creating a personal account. In this case all the necessary user data will be stored in a remote DB (login data, cloud storage access and refresh tokens)
 
 Encrypted data will be stored in .txt files. Config JSON files will store the encryption key and .txt file path. All these files can be stored wherever user decides (locally on device, external storage device)
+
+## Flow diagram:
+
+![flow diagram](./diagrams/flow%20diagram.jpg)
+
+## Database scheme:
+
+![database scheme](./diagrams/database%20scheme.jpg)
+
+## App screens
+
+![screens](./diagrams/screens.jpg)
