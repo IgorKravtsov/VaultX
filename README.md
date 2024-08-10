@@ -20,8 +20,6 @@ Encrypted data will be stored in .txt files. Config JSON files will store the en
 
 ![screens](./images/diagrams/screens.jpg)
 
-
 ## Lesson changes
 
-![Lesson9_1](./images/lesson9/1.png)
-![Lesson9_2](./images/lesson9/2.png)
+![Lesson10](./images/lesson10/lesson10.gif)
