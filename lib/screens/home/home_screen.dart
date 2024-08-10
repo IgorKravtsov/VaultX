@@ -11,14 +11,16 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  String _searchQuery = '';
+  final _searchController = TextEditingController();
 
   void _onSearchQueryChanged(String query) {
-    setState(() => _searchQuery = query);
+    setState(() {});
   }
 
   void _onClear() {
-    setState(() => _searchQuery = '');
+    setState(() {
+      _searchController.clear();
+    });
   }
 
   @override
@@ -29,12 +31,14 @@ class _HomeScreenState extends State<HomeScreen> {
         children: <Widget>[
           Search(
             onChanged: _onSearchQueryChanged,
+            controller: _searchController,
             onClear: _onClear,
           ),
           Expanded(
               child: SegmentsList(
-            searchQuery: _searchQuery,
-          ))
+              searchQuery: _searchController.text,
+            ),
+          )
         ],
       ),
     );
