@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import 'common/ui/app_drawer.dart';
 import 'screens/home/home.dart';
 
 void main() {
@@ -81,57 +82,6 @@ class MainBottomAppBar extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.account_circle),
             onPressed: () {},
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class AppDrawer extends StatelessWidget {
-  const AppDrawer({super.key});
-
-  void _onTapItem(BuildContext context) {
-    Navigator.pop(context);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: <Widget>[
-          DrawerHeader(
-            decoration: const BoxDecoration(
-              color: Colors.blue,
-            ),
-            child: Column(
-              children: [
-                Expanded(child: Image.asset('assets/images/vaultxLogo.png')),
-                const SizedBox(height: 10),
-                Text(AppLocalizations.of(context)?.title ?? '',
-                    style: const TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.bold)),
-              ],
-            ),
-          ),
-          ListTile(
-            title: Text(
-              AppLocalizations.of(context)?.drawerNavigationItem1 ?? '',
-            ),
-            onTap: () => _onTapItem(context),
-          ),
-          ListTile(
-            title: Text(
-              AppLocalizations.of(context)?.drawerNavigationItem2 ?? '',
-            ),
-            onTap: () => _onTapItem(context),
-          ),
-          ListTile(
-            title: Text(
-              AppLocalizations.of(context)?.drawerNavigationItem3 ?? '',
-            ),
-            onTap: () => _onTapItem(context),
           ),
         ],
       ),
