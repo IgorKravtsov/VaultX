@@ -1,0 +1,26 @@
+{
+  "title": "VaultX",
+  "@title": {
+    "description": "Title of the application"
+  },
+  "home": "VaultX",
+  "@home": {
+    "description": "Home page title"
+  },
+  "floatingActionButtonTooltip": "Increment",
+  "@floatingActionButtonTooltip": {
+    "description": "tooltip"
+  },
+  "drawerNavigationItem1": "Keys configuration",
+  "@drawerNavigationItem1": {
+    "description": "Drawer item #1"
+  },
+  "drawerNavigationItem2": "Theme",
+  "@drawerNavigationItem2": {
+    "description": "Drawer item #2"
+  },
+  "drawerNavigationItem3": "Language",
+  "@drawerNavigationItem3": {
+    "description": "Drawer item #3"
+  }
+}

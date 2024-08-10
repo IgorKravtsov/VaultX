@@ -10,12 +10,18 @@ Encrypted data will be stored in .txt files. Config JSON files will store the en
 
 ## Flow diagram:
 
-![flow diagram](./diagrams/flow%20diagram.jpg)
+![flow diagram](./images/diagrams/flow%20diagram.jpg)
 
 ## Database scheme:
 
-![database scheme](./diagrams/database%20scheme.jpg)
+![database scheme](./images/diagrams/database%20scheme.jpg)
 
 ## App screens
 
-![screens](./diagrams/screens.jpg)
+![screens](./images/diagrams/screens.jpg)
+
+
+## Lesson changes
+
+![Lesson9_1](./images/lesson9/1.png)
+![Lesson9_2](./images/lesson9/2.png)
