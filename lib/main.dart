@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +12,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: AppLocalizations.of(context)?.title ?? '',
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
@@ -29,7 +32,9 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text("VaultX"),
+        title: Text(
+          AppLocalizations.of(context)?.home ?? '',
+        ),
         centerTitle: true,
       ),
       drawer: const AppDrawer(),
@@ -42,7 +47,8 @@ class MyHomePage extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        tooltip: 'Increment',
+        tooltip:
+            AppLocalizations.of(context)?.floatingActionButtonTooltip ?? '',
         child: const Icon(Icons.add),
       ),
       bottomNavigationBar: const MainBottomAppBar(),
@@ -86,9 +92,11 @@ class MainBottomAppBar extends StatelessWidget {
 }
 
 class AppDrawer extends StatelessWidget {
-  const AppDrawer({
-    super.key,
-  });
+  const AppDrawer({super.key});
+
+  void _onTapItem(BuildContext context) {
+    Navigator.pop(context);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -104,29 +112,29 @@ class AppDrawer extends StatelessWidget {
               children: [
                 Expanded(child: Image.asset('assets/images/vaultxLogo.png')),
                 const SizedBox(height: 10),
-                const Text("VaultX",
-                    style: TextStyle(
+                Text(AppLocalizations.of(context)?.title ?? '',
+                    style: const TextStyle(
                         color: Colors.white, fontWeight: FontWeight.bold)),
               ],
             ),
           ),
           ListTile(
-            title: const Text('Keys configuration'),
-            onTap: () {
-              Navigator.pop(context);
-            },
+            title: Text(
+              AppLocalizations.of(context)?.drawerNavigationItem1 ?? '',
+            ),
+            onTap: () => _onTapItem(context),
           ),
           ListTile(
-            title: const Text('Theme'),
-            onTap: () {
-              Navigator.pop(context);
-            },
+            title: Text(
+              AppLocalizations.of(context)?.drawerNavigationItem2 ?? '',
+            ),
+            onTap: () => _onTapItem(context),
           ),
           ListTile(
-            title: const Text('Language'),
-            onTap: () {
-              Navigator.pop(context);
-            },
+            title: Text(
+              AppLocalizations.of(context)?.drawerNavigationItem3 ?? '',
+            ),
+            onTap: () => _onTapItem(context),
           ),
         ],
       ),
