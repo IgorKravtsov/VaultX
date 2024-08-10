@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'ui/list.dart';
 import 'ui/search.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class HomeScreenContent extends StatefulWidget {
+  const HomeScreenContent({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<HomeScreenContent> createState() => _HomeScreenContentState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenContentState extends State<HomeScreenContent> {
   final _searchController = TextEditingController();
 
   void _onSearchQueryChanged(String query) {
@@ -35,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
             onClear: _onClear,
           ),
           Expanded(
-              child: SegmentsList(
+            child: SegmentsList(
               searchQuery: _searchController.text,
             ),
           )
