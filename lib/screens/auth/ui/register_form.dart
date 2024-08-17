@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:vaultx/app/vaultx_app.dart';
 
 class RegisterForm extends StatelessWidget {
   RegisterForm({super.key});
@@ -11,10 +12,16 @@ class RegisterForm extends StatelessWidget {
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
 
-  void _onSubmit() {
+  void _onSubmit(BuildContext context) {
     if (!_formKey.currentState!.validate()) {
       return;
     }
+    User.of(context)?.onUserChanged(
+      firstName: _firstNameController.text,
+      lastName: _lastNameController.text,
+      email: _emailController.text,
+    );
+    Navigator.pop(context);
   }
 
   @override
@@ -105,7 +112,7 @@ class RegisterForm extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           ElevatedButton(
-            onPressed: _onSubmit,
+            onPressed: () => _onSubmit(context),
             child: Text(localization?.register ?? '',
                 style: const TextStyle(fontSize: 20)),
           ),

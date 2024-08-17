@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:vaultx/screens/home/my_home_page.dart';
+import 'package:vaultx/screens/auth/ui/login_form.dart';
+import 'package:vaultx/screens/auth/ui/register_form.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AuthScreen extends StatefulWidget {
@@ -56,18 +57,21 @@ class _AuthScreenState extends State<AuthScreen>
             ],
           ),
           Expanded(
-            child: PageView(
-              controller: _pageController,
-              onPageChanged: (index) {
-                _tabController.animateTo(
-                  index,
-                  duration: const Duration(milliseconds: 300),
-                );
-              },
-              children: const [
-                MyHomePage(),
-                MyHomePage(),
-              ],
+            child: Padding(
+              padding: const EdgeInsets.all(32.0),
+              child: PageView(
+                controller: _pageController,
+                onPageChanged: (index) {
+                  _tabController.animateTo(
+                    index,
+                    duration: const Duration(milliseconds: 300),
+                  );
+                },
+                children: [
+                  LoginForm(),
+                  RegisterForm(),
+                ],
+              ),
             ),
           ),
         ],

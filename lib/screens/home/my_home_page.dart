@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:vaultx/app/vaultx_app.dart';
 
 import 'package:vaultx/common/ui/app_drawer.dart';
 import 'package:vaultx/common/ui/main_bottom_app_bar.dart';
@@ -13,7 +14,7 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final localization = AppLocalizations.of(context);
-
+    final user = User.of(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -21,6 +22,12 @@ class MyHomePage extends StatelessWidget {
           localization?.home ?? '',
         ),
         centerTitle: true,
+        actions: [
+          if (user?.email != null)
+            CircleAvatar(
+              child: Text(user?.email?[0].toUpperCase() ?? ''),
+            ),
+        ],
       ),
       drawer: const AppDrawer(),
       body: const HomeScreenContent(),
