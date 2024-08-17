@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import 'package:vaultx/common/user_inherited_widget.dart';
 
 class LoginForm extends StatelessWidget {
   LoginForm({super.key});
@@ -8,10 +11,14 @@ class LoginForm extends StatelessWidget {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
-  void _onSubmit() {
+  void _onSubmit(BuildContext context) {
     if (!_formKey.currentState!.validate()) {
       return;
     }
+    UserInheritedWidget.of(context)?.onUserChanged(
+      email: _emailController.text,
+    );
+    Navigator.pop(context);
   }
 
   @override
@@ -51,7 +58,7 @@ class LoginForm extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           ElevatedButton(
-            onPressed: _onSubmit,
+            onPressed: () => _onSubmit(context),
             child: Text(localization?.login ?? '',
                 style: const TextStyle(fontSize: 20)),
           ),
