@@ -2,35 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import 'package:vaultx/common/user_inherited_widget.dart';
 import 'package:vaultx/screens/home/home.dart';
-
-class User extends InheritedWidget {
-  const User({
-    super.key,
-    required super.child,
-    this.firstName,
-    this.lastName,
-    this.email,
-    required this.onUserChanged,
-  });
-
-  final String? firstName;
-  final String? lastName;
-  final String? email;
-  final void Function(
-      {String? firstName,
-      String? lastName,
-      required String email}) onUserChanged;
-
-  static User? of(BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType<User>();
-  }
-
-  @override
-  bool updateShouldNotify(User oldWidget) {
-    return true;
-  }
-}
 
 class VaultXApp extends StatefulWidget {
   const VaultXApp({super.key});
@@ -58,7 +31,7 @@ class _VaultXAppState extends State<VaultXApp> {
 
   @override
   Widget build(BuildContext context) {
-    return User(
+    return UserInheritedWidget(
       onUserChanged: _onUserChanged,
       firstName: firstName,
       lastName: lastName,

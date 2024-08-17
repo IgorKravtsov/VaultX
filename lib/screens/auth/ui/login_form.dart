@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:vaultx/app/vaultx_app.dart';
+
+import 'package:vaultx/common/user_inherited_widget.dart';
 
 class LoginForm extends StatelessWidget {
   LoginForm({super.key});
@@ -13,7 +15,7 @@ class LoginForm extends StatelessWidget {
     if (!_formKey.currentState!.validate()) {
       return;
     }
-    User.of(context)?.onUserChanged(
+    UserInheritedWidget.of(context)?.onUserChanged(
       email: _emailController.text,
     );
     Navigator.pop(context);

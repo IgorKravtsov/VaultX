@@ -75,5 +75,13 @@
         "type": "String"
       }
     }
+  },
+  "currentUser": "Current user",
+  "@currentUser": {
+    "description": "Current user"
+  },
+  "close": "Close",
+  "@close": {
+    "description": "Close"
   }
 }

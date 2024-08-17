@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:vaultx/app/vaultx_app.dart';
+
+import 'package:vaultx/common/user_inherited_widget.dart';
 
 class RegisterForm extends StatelessWidget {
   RegisterForm({super.key});
@@ -16,7 +18,7 @@ class RegisterForm extends StatelessWidget {
     if (!_formKey.currentState!.validate()) {
       return;
     }
-    User.of(context)?.onUserChanged(
+    UserInheritedWidget.of(context)?.onUserChanged(
       firstName: _firstNameController.text,
       lastName: _lastNameController.text,
       email: _emailController.text,
