@@ -22,4 +22,4 @@ Encrypted data will be stored in .txt files. Config JSON files will store the en
 
 ## Lesson changes
 
-![Lesson10](./images/lesson10/lesson10.gif)
+![Lesson12](./images/lesson12/lesson12.gif)

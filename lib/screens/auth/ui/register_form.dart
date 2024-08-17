@@ -31,94 +31,96 @@ class RegisterForm extends StatelessWidget {
     final localization = AppLocalizations.of(context);
     return Form(
       key: _formKey,
-      child: Column(
-        children: [
-          Row(
-            children: [
-              Expanded(
-                child: TextFormField(
-                  controller: _firstNameController,
-                  decoration: InputDecoration(
-                    labelText: localization?.firstName ?? '',
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  child: TextFormField(
+                    controller: _firstNameController,
+                    decoration: InputDecoration(
+                      labelText: localization?.firstName ?? '',
+                    ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return localization?.fieldRequired(
+                                localization.firstName.toLowerCase()) ??
+                            '';
+                      }
+                      return null;
+                    },
                   ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return localization?.fieldRequired(
-                              localization.firstName.toLowerCase()) ??
-                          '';
-                    }
-                    return null;
-                  },
                 ),
-              ),
-              const SizedBox(width: 10),
-              Expanded(
-                child: TextFormField(
-                  controller: _lastNameController,
-                  decoration: InputDecoration(
-                    labelText: localization?.lastName ?? '',
+                const SizedBox(width: 10),
+                Expanded(
+                  child: TextFormField(
+                    controller: _lastNameController,
+                    decoration: InputDecoration(
+                      labelText: localization?.lastName ?? '',
+                    ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return localization?.fieldRequired(
+                                localization.lastName.toLowerCase()) ??
+                            '';
+                      }
+                      return null;
+                    },
                   ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return localization?.fieldRequired(
-                              localization.lastName.toLowerCase()) ??
-                          '';
-                    }
-                    return null;
-                  },
                 ),
+              ],
+            ),
+            TextFormField(
+              controller: _emailController,
+              decoration: InputDecoration(
+                labelText: localization?.email ?? '',
               ),
-            ],
-          ),
-          TextFormField(
-            controller: _emailController,
-            decoration: InputDecoration(
-              labelText: localization?.email ?? '',
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return localization
+                          ?.fieldRequired(localization.email.toLowerCase()) ??
+                      '';
+                }
+                return null;
+              },
             ),
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return localization
-                        ?.fieldRequired(localization.email.toLowerCase()) ??
-                    '';
-              }
-              return null;
-            },
-          ),
-          TextFormField(
-            controller: _passwordController,
-            decoration: InputDecoration(
-              labelText: localization?.password ?? '',
+            TextFormField(
+              controller: _passwordController,
+              decoration: InputDecoration(
+                labelText: localization?.password ?? '',
+              ),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return localization?.fieldRequired(
+                          localization.password.toLowerCase()) ??
+                      '';
+                }
+                return null;
+              },
             ),
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return localization
-                        ?.fieldRequired(localization.password.toLowerCase()) ??
-                    '';
-              }
-              return null;
-            },
-          ),
-          TextFormField(
-            controller: _confirmPasswordController,
-            decoration: InputDecoration(
-              labelText: localization?.confirmPassword ?? '',
+            TextFormField(
+              controller: _confirmPasswordController,
+              decoration: InputDecoration(
+                labelText: localization?.confirmPassword ?? '',
+              ),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return localization?.fieldRequired(
+                          localization.confirmPassword.toLowerCase()) ??
+                      '';
+                }
+                return null;
+              },
             ),
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return localization?.fieldRequired(
-                        localization.confirmPassword.toLowerCase()) ??
-                    '';
-              }
-              return null;
-            },
-          ),
-          const SizedBox(height: 20),
-          ElevatedButton(
-            onPressed: () => _onSubmit(context),
-            child: Text(localization?.register ?? '',
-                style: const TextStyle(fontSize: 20)),
-          ),
-        ],
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () => _onSubmit(context),
+              child: Text(localization?.register ?? '',
+                  style: const TextStyle(fontSize: 20)),
+            ),
+          ],
+        ),
       ),
     );
   }
