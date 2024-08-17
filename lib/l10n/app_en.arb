@@ -26,5 +26,9 @@
   "drawerNavigationItem3": "Language",
   "@drawerNavigationItem3": {
     "description": "Drawer item #3"
+  },
+  "drawerNavigationItem4": "Login",
+  "@drawerNavigationItem4": {
+    "description": "Drawer item #3"
   }
 }

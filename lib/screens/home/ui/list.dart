@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../model/segment.dart';
+import 'package:vaultx/screens/home/model/segment.dart';
 
 final segments = List.generate(
   50,

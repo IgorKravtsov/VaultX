@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'ui/list.dart';
-import 'ui/search.dart';
+import 'package:vaultx/screens/home/ui/list.dart';
+import 'package:vaultx/screens/home/ui/search.dart';
 
 class HomeScreenContent extends StatefulWidget {
   const HomeScreenContent({super.key});

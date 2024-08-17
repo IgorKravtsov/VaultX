@@ -5,7 +5,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:vaultx/common/ui/app_drawer.dart';
 import 'package:vaultx/common/ui/main_bottom_app_bar.dart';
 
-import 'home_screen_content.dart';
+import 'package:vaultx/screens/home/home_screen_content.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
