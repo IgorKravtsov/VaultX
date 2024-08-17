@@ -7,6 +7,10 @@
   "@home": {
     "description": "Home page title"
   },
+  "searchHint": "Search",
+  "@searchHint": {
+    "description": "Search hint"
+  },
   "floatingActionButtonTooltip": "Increment",
   "@floatingActionButtonTooltip": {
     "description": "tooltip"
