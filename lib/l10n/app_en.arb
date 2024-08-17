@@ -30,5 +30,13 @@
   "drawerNavigationItem4": "Login",
   "@drawerNavigationItem4": {
     "description": "Drawer item #3"
+  },
+  "authTab1": "Login",
+  "@authTab1": {
+    "description": "Auth tab login"
+  },
+  "authTab2": "Register",
+  "@authTab2": {
+    "description": "Auth tab register"
   }
 }
