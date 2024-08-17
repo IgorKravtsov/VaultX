@@ -38,5 +38,42 @@
   "authTab2": "Register",
   "@authTab2": {
     "description": "Auth tab register"
+  },
+  "email": "Email",
+  "@email": {
+    "description": "Email"
+  },
+  "password": "Password",
+  "@password": {
+    "description": "Password"
+  },
+  "confirmPassword": "Confirm password",
+  "@confirmPassword": {
+    "description": "Confirm password"
+  },
+  "firstName": "First name",
+  "@firstName": {
+    "description": "First name"
+  },
+  "lastName": "Last name",
+  "@lastName": {
+    "description": "Last name"
+  },
+  "register": "Register",
+  "@register": {
+    "description": "Register"
+  },
+  "login": "Login",
+  "@login": {
+    "description": "Login"
+  },
+  "fieldRequired": "Plese enter your {field}",
+  "@fieldRequired": {
+    "description": "Field required",
+    "placeholders": {
+      "field": {
+        "type": "String"
+      }
+    }
   }
 }
